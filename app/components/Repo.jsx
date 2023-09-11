@@ -4,11 +4,11 @@ import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa';
 async function fetchRepo(name) {
   const response = await fetch(
     `https://api.github.com/repos/ngigordon/${name}`,
-    // {
-    //   next: {
-    //     revalidate: 60,
-    //   },
-    // }
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
   );
   const repo = await response.json();
   return repo;
@@ -19,7 +19,7 @@ const Repo = async ({ name }) => {
 
   return (
       <>
-          <h2>repos detail</h2>
+      {/* <h2>repos detail</h2> */}
       <h2>{repo.name}</h2>
       <p>{repo.description}</p>
       <div className='card-stats'>
